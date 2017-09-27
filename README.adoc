@@ -1,0 +1,28 @@
+= LightDI performance tests
+
+Microbenchmarks for link:https://github.com/helospark/light-di[LightDI] dependency injection framework comparing it with other frameworks.
+
+_Since one of the main goal of LightDI is performance (esepcially in embedded systems, and realtime context creations), it is important to make sure, it has a good performance._
+
+== Usage
+
+Compile and run with Maven like:
+[source,java]
+    mvn clean install
+    java -jar target/benchmarks.jar
+
+== Result
+
+Result (as of 09.27):
+
+[source,]
+	Context1PerformanceTest.testLightdiContext  avgt   20  26947.583 ±  5752.394  us/op
+	Context1PerformanceTest.testSpringContext   avgt   20  64403.209 ± 14982.245  us/op
+	Context2PerformanceTest.testLightdiContext  avgt   20  32887.184 ±  4770.911  us/op
+	Context2PerformanceTest.testSpringContext   avgt   20  62449.913 ± 15851.562  us/op
+	Context3PerformanceTest.testLightdiContext  avgt   20    223.215 ±    47.605  us/op
+	Context3PerformanceTest.testSpringContext   avgt   20  40417.119 ± 10206.270  us/op
+
+== Notes
+
+This benchmark uses JMH
