@@ -97,7 +97,7 @@
 							<transformers>
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>com.helospark.lightdi.it.TestClass</mainClass>
+									<mainClass>com.helospark.lightdi.it.PerformanceTests</mainClass>
 								</transformer>
 							</transformers>
 							<filters>
