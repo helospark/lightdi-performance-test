@@ -27,7 +27,8 @@ public class Context2PerformanceTest {
     @Benchmark
     public AnnotatedBean testLightdiContext() {
         LightDi lightDi = new LightDi();
-        try (LightDiContext asd = lightDi.initContextByPackage(com.helospark.lightdi.it.context2.AnnotatedBean.class.getPackage().getName())) {
+        try (LightDiContext asd = lightDi.initContextUsing(com.helospark.lightdi.it.context2.AnnotatedBean.class.getPackage().getName(),
+                this.getClass())) {
             return asd.getBean(AnnotatedBean.class);
         }
     }
